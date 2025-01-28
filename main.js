@@ -226,7 +226,14 @@ const eventListeners = () => {
     // grab the values from the form inputs and create an object
     // push that object to the data array
     // rerender cards using the cardsOnDom function and pass it the updated data array
-
+      let obj = {
+        videoId: form.querySelector("#videoId").value,
+        title: form.querySelector("#title").value,
+        category: form.querySelector("#category").value,
+        favorite: form.querySelector("#favorite").value
+      }
+      data.push(obj)
+      cardsOnDom(data)
     // Close modal and reset form
     formModal.hide();
     form.reset();
